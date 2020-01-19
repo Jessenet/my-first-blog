@@ -1,5 +1,6 @@
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.contrib.auth import views,authenticate,login
 
 urlpatterns = [
     # Examples:
@@ -7,5 +8,8 @@ urlpatterns = [
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^accounts/login/', views.login,name='login'),
+    url('^accounts/logout/',views.logout,name='logout'),
     url(r'',include('blog.urls')),
+
 ]
